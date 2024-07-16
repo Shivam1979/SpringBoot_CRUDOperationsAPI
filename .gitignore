@@ -20,7 +20,8 @@ target/
 *.iml
 *.ipr
 application.properties
-D:\SpringBoot\Application\SpringBoot_CRUDOperationsAPI\src\main\resources\application.properties
+SpringBoot_CRUDOperationsAPI\src\main\resources\application.properties
+*.properties
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
