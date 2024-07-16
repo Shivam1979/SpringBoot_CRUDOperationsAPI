@@ -11,4 +11,9 @@ public class HealthCheck {
     public String healthCheck(){
         return "Port is working ...";
     }
+
+    @GetMapping("/health-check")
+    public String healthCheck2(){
+        return "health-check is running properly";
+    }
 }
