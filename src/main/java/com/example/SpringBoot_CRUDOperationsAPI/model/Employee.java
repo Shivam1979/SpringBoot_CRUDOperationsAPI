@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Employee {
+public class                                                Employee {
     public Employee(long id, String name, long salary, String domain, String designation) {
         this.id = id;
         this.name = name;
