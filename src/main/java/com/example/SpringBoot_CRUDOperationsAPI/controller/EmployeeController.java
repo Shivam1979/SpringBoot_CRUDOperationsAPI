@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -37,5 +38,11 @@ public class EmployeeController {
         }else{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping("/get-all-employee")
+    public ResponseEntity<List<Employee>> getAllEmployee(Employee employee){
+        List<Employee> getAllEmployee = employeeService.getAllEmployee();
+        return new ResponseEntity<>(getAllEmployee, HttpStatus.FOUND);
     }
 }
