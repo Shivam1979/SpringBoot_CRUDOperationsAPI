@@ -6,6 +6,7 @@ import com.example.SpringBoot_CRUDOperationsAPI.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,6 +22,10 @@ public class ServiceImpl implements EmployeeService{
     @Override
     public Optional getEmployeeById(Long id){
         return employeeRepository.findById(id);
+    }
+    @Override
+    public List<Employee> getAllEmployee(){
+        return employeeRepository.findAll();
     }
 
 
