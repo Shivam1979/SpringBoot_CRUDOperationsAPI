@@ -40,6 +40,11 @@ public class EmployeeController {
     @GetMapping("/{name}")
     public ResponseEntity<List<Employee>> findByName(@PathVariable String name){
         List<Employee> findByName = employeeService.findByName(name);
-        return new ResponseEntity<>(findByName, HttpStatus.FOUND);
+
+        if (findByName.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }else{
+            return new ResponseEntity<>(findByName, HttpStatus.FOUND);
+        }
     }
 }
