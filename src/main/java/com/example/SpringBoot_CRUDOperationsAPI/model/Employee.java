@@ -2,6 +2,7 @@ package com.example.SpringBoot_CRUDOperationsAPI.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.stereotype.Service;
 
 @Entity
 @Data
@@ -12,6 +13,9 @@ public class Employee {
         this.salary = salary;
         this.domain = domain;
         this.designation = designation;
+    }
+    public Employee(){
+
     }
 
     @Id
