@@ -23,5 +23,10 @@ public class ServiceImpl implements EmployeeService{
         return employeeRepository.findById(id);
     }
 
+    @Override
+    public void deleteEmployee(Long id) {
+        employeeRepository.deleteById(id);
+    }
+
 
 }

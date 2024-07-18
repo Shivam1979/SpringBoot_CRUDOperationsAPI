@@ -20,6 +20,15 @@ public class EmployeeController {
         return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
     }
 
+
+    //End point to delete an employee
+    @DeleteMapping("/{id}")
+    public Boolean deleteEmployee(@PathVariable("id") Long id) {
+        employeeService.deleteEmployee(id);
+        return true;
+    }
+
+
     @GetMapping("/get-employee/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id){
         Optional<Employee> getEmployee = employeeService.getEmployeeById(id);

@@ -1,26 +1,18 @@
 package com.example.SpringBoot_CRUDOperationsAPI.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.stereotype.Service;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Employee {
-    public Employee(long id, String name, long salary, String domain, String designation) {
-        this.id = id;
-        this.name = name;
-        this.salary = salary;
-        this.domain = domain;
-        this.designation = designation;
-    }
-    public Employee(){
-
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Column(name = "emp_id")
     private long id;
 
@@ -35,7 +27,6 @@ public class Employee {
 
     @Column(name = "designation")
     private String designation;
-
 
 
 }
