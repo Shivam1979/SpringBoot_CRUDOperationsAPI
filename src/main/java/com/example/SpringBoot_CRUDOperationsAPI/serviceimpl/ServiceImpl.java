@@ -28,5 +28,9 @@ public class ServiceImpl implements EmployeeService{
         return employeeRepository.findAll();
     }
 
+    @Override
+    public List<Employee> findByName(String name) {
+        return employeeRepository.findByName(name);
+    }
 
 }

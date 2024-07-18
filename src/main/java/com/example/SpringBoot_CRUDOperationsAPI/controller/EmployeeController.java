@@ -36,4 +36,10 @@ public class EmployeeController {
         List<Employee> getAllEmployee = employeeService.getAllEmployee();
         return new ResponseEntity<>(getAllEmployee, HttpStatus.FOUND);
     }
+
+    @GetMapping("/{name}")
+    public ResponseEntity<List<Employee>> findByName(@PathVariable String name){
+        List<Employee> findByName = employeeService.findByName(name);
+        return new ResponseEntity<>(findByName, HttpStatus.FOUND);
+    }
 }
