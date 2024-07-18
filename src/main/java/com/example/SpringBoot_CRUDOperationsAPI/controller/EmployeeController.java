@@ -5,9 +5,9 @@ import com.example.SpringBoot_CRUDOperationsAPI.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 public class EmployeeController {
@@ -18,5 +18,15 @@ public class EmployeeController {
     public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee){
         Employee savedEmployee = employeeService.saveEmployee(employee);
         return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/get-employee/{id}")
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id){
+        Optional<Employee> getEmployee = employeeService.getEmployeeById(id);
+        if (getEmployee.isPresent()){
+            return new ResponseEntity<>(getEmployee.get(), HttpStatus.FOUND);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 }
