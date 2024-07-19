@@ -12,7 +12,9 @@ public interface EmployeeService {
     Optional getEmployeeById(Long id);
     void deleteEmployee(Long id);
 
-//    Employee updateEmployee(Long id, Employee employee);
-    List<Employee> getAllEmployee();
+
+    Employee updateEmployee(Long id,Employee employee);
+   //
+List<Employee> getAllEmployee();
 //    List<Employee> findByName(Employee name);
 }
